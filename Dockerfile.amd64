@@ -78,6 +78,19 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/* /tmp/a.txt /tmp/b.txt
 
+# Install filebrowser
+RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash \
+    && cd /root \
+    && filebrowser config init \
+    && filebrowser users add tduser tduser \
+    && filebrowser config set \
+        --address=0.0.0.0 \
+        --baseurl=/filesystem \
+        --auth.method=noauth \
+        --viewMode=mosaic \
+        --root=/ \
+        --branding.disableExternal
+
 
 ################################################################################
 # builder
@@ -102,11 +115,10 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && apt-get install -y yarn
 
 # build frontend
-COPY web /src/web
-RUN cd /src/web \
+COPY web_new /src/web_new
+RUN cd /src/web_new/vuensee \
     && yarn \
-    && yarn build
-RUN sed -i 's#app/locale/#novnc/app/locale/#' /src/web/dist/static/novnc/app/ui.js
+    && VITE_TITLE=MyVNC yarn build
 
 
 
@@ -116,7 +128,9 @@ RUN sed -i 's#app/locale/#novnc/app/locale/#' /src/web/dist/static/novnc/app/ui.
 FROM system
 LABEL maintainer="fcwu.tw@gmail.com"
 
-COPY --from=builder /src/web/dist/ /usr/local/lib/web/frontend/
+COPY --from=builder /src/web_new/vuensee/dist/ /usr/local/lib/web/frontend/
+COPY web/static/websockify /usr/local/lib/web/frontend/static/websockify
+COPY web/static/novnc /usr/local/lib/web/frontend/static/novnc
 COPY rootfs /
 RUN ln -sf /usr/local/lib/web/frontend/static/websockify /usr/local/lib/web/frontend/static/novnc/utils/websockify && \
 	chmod +x /usr/local/lib/web/frontend/static/websockify/run
