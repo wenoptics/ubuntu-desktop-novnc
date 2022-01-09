@@ -82,6 +82,13 @@
       :class="$style.vnc"
     />
 
+    <div :class="$style.sidebar">
+      <iframe
+        style="height: 100%; width: 100%"
+        src="/filesystem/files/root/Desktop/"
+      />
+    </div>
+
     <Login
       v-if="loginOpen"
       @submit="onSubmitCredentials"
@@ -119,6 +126,19 @@
   left: 0;
   overflow: hidden;
 }
+
+.sidebar {
+  position: absolute;
+  z-index: 11;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 30em;
+  background: #ffffff;
+  opacity: 0.9;
+  border-left: #222222 solid 2px;
+}
+
 </style>
 
 <script>

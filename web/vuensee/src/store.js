@@ -36,7 +36,7 @@ const initialCapabilities = {
 
 const initialSettings = {
   language: 'en',
-  autoconnect: false,
+  autoconnect: true,
   username: '',
   password: '',
   bell: true,
@@ -53,7 +53,7 @@ const initialSettings = {
   hostname: window.location.hostname,
   path: 'websockify',
   repeaterId: '',
-  port: isSecure ? 443 : 80,
+  port: isSecure ? 443 : 6080,
   ssl: isSecure
 }
 
