@@ -1,0 +1,45 @@
+/*
+ * vuensee
+ * @author Anders Evenrud <andersevenrud@gmail.com>
+ * @license MIT
+ */
+:root {
+  --vuensee-margin: 1rem;
+  --vuensee-margin-half: 0.5rem;
+  --vuensee-margin-quarter: 0.25rem;
+
+  --vuensee-font-size-small: 14px;
+  --vuensee-font-size-normal: 16px;
+  --vuensee-font-size-large: 18px;
+  --vuensee-font-size-xlarge: 20px;
+
+  --vuensee-text-color: #eee;
+  --vuensee-background-color: #222;
+
+  --vuensee-logo-text-color: currentColor;
+  --vuensee-logo-text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  --vuensee-logo-font-size: 4rem;
+
+  --vuensee-panel-background-color: #525252;
+  --vuensee-panel-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5);
+
+  --vuensee-accordian-background-color: #414141;
+
+  --vuensee-input-border: 1px solid #222;
+  --vuensee-input-outline: 1px solid #aaa;
+  --vuensee-input-background-color: #313131;
+  --vuensee-input-disabled-background-color: #333;
+
+  --vuensee-message-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  --vuensee-message-border-radius: 0.25rem;
+  --vuensee-message-info-background-color: #65ac69;
+  --vuensee-message-info-text-color: currentColor;
+  --vuensee-message-warn-background-color: #e29c31;
+  --vuensee-message-warn-text-color: currentColor;
+  --vuensee-message-error-background-color: #f44336;
+  --vuensee-message-error-text-color: currentColor;
+
+  --vuensee-icon-size: 1.5rem;
+
+  --vuensee-default-transition: all 0.25s;
+}

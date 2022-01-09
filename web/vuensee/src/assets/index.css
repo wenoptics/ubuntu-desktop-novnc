@@ -1,0 +1,91 @@
+/*!
+ * vuensee
+ * @author Anders Evenrud <andersevenrud@gmail.com>
+ * @license MIT
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--vuensee-text-color);
+  font-size: var(--vuensee-font-size-normal);
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--vuensee-background-color);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  html {
+    font-size: var(--vuensee-font-size-small);
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: var(--vuensee-font-size-large);
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: var(--vuensee-font-size-xlarge);
+  }
+}
+
+/* Misc */
+::-webkit-scrollbar {
+  width: var(--vuensee-margin-half);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vuensee-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: currentColor;
+  border: 0 none;
+  border-radius: 0;
+}
+
+/* Resets */
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input:disabled,
+select:disabled,
+button:disabled {
+  cursor: not-allowed;
+}
+
+input:not(:disabled),
+select:not(:disabled),
+textarea:not(:disabled),
+button:not(:disabled) {
+  color: currentColor;
+}
+
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
