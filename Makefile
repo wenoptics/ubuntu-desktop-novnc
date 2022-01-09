@@ -1,7 +1,7 @@
 .PHONY: build run
 
 # Default values for variables
-REPO  ?= wenoptics/ubuntu-vnc-dockerized
+REPO  ?= wenoptics/ubuntu-desktop-novnc
 TAG   ?= latest
 # you can choose other base image versions
 IMAGE ?= ubuntu:20.04

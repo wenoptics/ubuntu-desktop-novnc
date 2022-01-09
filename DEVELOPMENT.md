@@ -1,7 +1,7 @@
 # Get code
 
 ```
-git clone --recursive https://github.com/fcwu/docker-ubuntu-vnc-desktop
+git clone --recursive https://github.com/wenoptics/ubuntu-vnc-dockerized.git
 ```
 
 or, if you have already cloned it, get submodules contents :
