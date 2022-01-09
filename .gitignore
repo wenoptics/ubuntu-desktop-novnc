@@ -1,3 +1,5 @@
 *.pyc
 tags
 cscope*
+node_modules/
+web/vuensee/dist/

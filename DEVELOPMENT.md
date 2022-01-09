@@ -18,7 +18,7 @@ container, and test the changes:
 
 ```
 make clean
-FLAVOR=lxqt ARCH=amd64 IMAGE=ubuntu:18.04 make build
+IMAGE=ubuntu:18.04 make build
 make run
 ```
 
@@ -37,7 +37,37 @@ cd /src/image/usr/local/lib/web/backend
 ## develop frontend
 
 ```
-cd web
-yarn add
+cd web/vuensee
+yarn
 BACKEND=http://127.0.0.1:6080 npm run dev
 ```
+
+
+## Guide to Setup Dependencies from 3rd-party Git Repo
+
+This section shows some ideas (using `git subtree`) about managing 3rd-party Git repo dependencies
+with local modifications. [#1](#References)
+
+
+1. Add the sub project as a remote
+
+    ```bash
+    git remote add -f vuensee https://github.com/andersevenrud/vuensee.git
+    ```
+
+2. Add the folder as git-subtree
+
+    ```bash
+    git subtree add --prefix web/vuensee vuensee main --squash
+    ```
+   
+3. To update the sub-project:
+    
+    ```bash
+    git fetch vuensee main
+    git subtree pull --prefix web/vuensee vuensee main --squash
+    ```
+   
+**References**
+
+[1] [Git-Subtree](https://www.atlassian.com/git/tutorials/git-subtree), Atlassian
