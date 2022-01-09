@@ -53,7 +53,7 @@ const initialSettings = {
   hostname: window.location.hostname,
   path: 'websockify',
   repeaterId: '',
-  port: isSecure ? 443 : 6080,
+  port: isSecure ? 443 : window.location.port,
   ssl: isSecure
 }
 

@@ -2,7 +2,7 @@
   "name": "vuensee",
   "version": "0.9.12",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3020",
     "build": "vite build",
     "lint": "eslint '*.js' 'src/**/*.js' 'src/**/*.vue'"
   },
