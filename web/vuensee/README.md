@@ -1,5 +1,14 @@
 # vuensee
 
+## Fork
+
+This is a fork to [andersevenrud/vuensee](https://andersevenrud.github.io/vuensee/index.html), which adds a naive 
+ support of the [`filebrowser`](https://github.com/filebrowser/filebrowser).
+
+---
+
+## Original Doc
+
 > `/wuː'ɛn'siː/`
 
 A [noVNC](https://github.com/novnc/noVNC) client interface built with Vue 3 and Vite.
