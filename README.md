@@ -1,7 +1,7 @@
 # ubuntu-desktop-novnc
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/dorowu/ubuntu-desktop-lxde-vnc.svg)](https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/)
-[![Docker Stars](https://img.shields.io/docker/stars/dorowu/ubuntu-desktop-lxde-vnc.svg)](https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wenoptics/ubuntu-desktop-novnc.svg)](https://hub.docker.com/r/wenoptics/ubuntu-desktop-novnc/)
+[![Docker Stars](https://img.shields.io/docker/stars/wenoptics/ubuntu-desktop-novnc.svg)](https://hub.docker.com/r/wenoptics/ubuntu-desktop-novnc/)
 
 `ubuntu-desktop-novnc` is a Docker image to provide web VNC interface to access Ubuntu LXDE desktop environment, alone
  side with a browser-based file management UI for quickly access the file system.
