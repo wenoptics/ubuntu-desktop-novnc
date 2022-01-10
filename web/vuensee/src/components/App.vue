@@ -87,9 +87,22 @@
       :class="$style.sidebar"
     >
       <iframe
+        v-if="connected"
         style="height: 100%; width: 100%"
         :src="config.settings.fbUrl"
       />
+      <div
+        v-else-if="connecting"
+        :class="$style.notice"
+      >
+        Connecting...
+      </div>
+      <div
+        v-else
+        :class="$style.notice"
+      >
+        File browser will be available after connected...
+      </div>
     </div>
 
     <Login
@@ -140,6 +153,12 @@
   background: #ffffff;
   opacity: 0.9;
   border-left: #222222 solid 2px;
+}
+
+.sidebar .notice {
+  color: #222222;
+  padding: 1em;
+  text-align: center;
 }
 
 </style>
