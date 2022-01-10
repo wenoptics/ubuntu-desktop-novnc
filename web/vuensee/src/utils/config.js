@@ -8,6 +8,8 @@
 import { camelToSnake, csvToArray, isTrue } from './primitives'
 
 const env = { ...import.meta.env }
+// Looks like without calling this explicitly, we will have an empty `env`
+const _ = import.meta.env
 
 const params = Object.fromEntries(new URLSearchParams(
   window.location.search.substring(1)
