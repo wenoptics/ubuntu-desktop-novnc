@@ -31,7 +31,7 @@
 .invisible {
   transform: translateX(-100%);
   margin-left: var(--vuensee-icon-size);
-  animation: scrollDown 0.5s normal forwards;
+  /*animation: scrollDown 0.5s normal forwards;*/
 }
 
 @media screen and (max-width: 780px) {

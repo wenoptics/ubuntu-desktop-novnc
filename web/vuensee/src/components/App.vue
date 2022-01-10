@@ -284,6 +284,12 @@ export default {
       store.addMessage(this.t('messages.connected'))
       store.connectionActivated()
       this.rfb.focus()
+
+      // Show the filebroswer once connected
+      setTimeout(() => {
+        store.toggleFilebrowser()
+      }, 1)
+
     },
 
     onDisconnected(e) {

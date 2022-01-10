@@ -198,7 +198,7 @@ export const connectionDeactivate = () => assignConnection({
  */
 export const connectionActivated = () => assignConnection({
   connected: true,
-  panelOpen: false
+  // panelOpen: false
 })
 
 /**
