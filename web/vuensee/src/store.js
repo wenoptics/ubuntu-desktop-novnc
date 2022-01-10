@@ -14,7 +14,8 @@ const defaultVisibility = {
   showSettings: false,
   showPower: false,
   showKeys: false,
-  showClipboard: false
+  showClipboard: false,
+  showFilebrowser: false
 }
 
 const defaultConnectionStates = {
@@ -160,6 +161,11 @@ export const toggleKeys = toggleable('showKeys', defaultVisibility)
  * Toggles clopboard interaction visibility in panel
  */
 export const toggleClipboard = toggleable('showClipboard', defaultVisibility)
+
+/**
+ * Toggles Filebrowser interaction visibility in panel
+ */
+export const toggleFilebrowser = toggleable('showFilebrowser', defaultVisibility)
 
 /**
  * Toggles the state for activating touch device on-screen keyboard

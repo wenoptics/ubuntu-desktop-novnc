@@ -11,6 +11,7 @@ export default {
     settings: 'Toggle settings',
     keys: 'Send keys',
     clipboard: 'Toggle clipboard',
+    filebrowser: 'Toggle file browser',
     fullscreen: 'Toggle fullscreen',
     power: 'Toggle power controls',
     connect: 'Connect',

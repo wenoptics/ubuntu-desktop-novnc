@@ -113,6 +113,15 @@
       >
         <ConnectIcon />
       </Button>
+
+      <Button
+        v-if="features.filebrowser"
+        :title="t('controls.filebrowser')"
+        :disabled="!connected"
+        @click="$emit('toggle-filebrowser', $event)"
+      >
+        <FilebrowserIcon />
+      </Button>
     </div>
   </div>
 </template>
@@ -204,6 +213,7 @@ export default {
     'connect',
     'toggle-keys',
     'toggle-clipboard',
+    'toggle-filebrowser',
     'toggle-touch-keyboard',
     'toggle-panel',
     'power',

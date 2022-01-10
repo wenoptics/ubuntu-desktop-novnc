@@ -32,6 +32,7 @@
         @power="onPower"
         @toggle-keys="onToggleKeys"
         @toggle-clipboard="onToggleClipboard"
+        @toggle-filebrowser="onToggleFilebrowser"
         @toggle-touch-keyboard="onToggleTouchKeyboard"
         @toggle-panel="onTogglePanel"
       />
@@ -69,6 +70,12 @@
           @update="onUpdateSettings"
           @submit="onConnectRequest"
         />
+
+        <Filebrowser
+          v-if="config.features.filebrowser"
+          v-show="showFilebrowser"
+          :url="config.settings.fbUrl"
+        />
       </template>
     </Panel>
 
@@ -81,29 +88,6 @@
       ref="view"
       :class="$style.vnc"
     />
-
-    <div
-      v-if="config.features.filebrowser"
-      :class="$style.sidebar"
-    >
-      <iframe
-        v-if="connected"
-        style="height: 100%; width: 100%"
-        :src="config.settings.fbUrl"
-      />
-      <div
-        v-else-if="connecting"
-        :class="$style.notice"
-      >
-        Connecting...
-      </div>
-      <div
-        v-else
-        :class="$style.notice"
-      >
-        File browser will be available after connected...
-      </div>
-    </div>
 
     <Login
       v-if="loginOpen"
@@ -143,24 +127,6 @@
   overflow: hidden;
 }
 
-.sidebar {
-  position: absolute;
-  z-index: 11;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 30em;
-  background: #ffffff;
-  opacity: 0.9;
-  border-left: #222222 solid 2px;
-}
-
-.sidebar .notice {
-  color: #222222;
-  padding: 1em;
-  text-align: center;
-}
-
 </style>
 
 <script>
@@ -183,11 +149,13 @@ import Login from './layout/Login.vue'
 import Messages from './layout/Messages.vue'
 import Logo from './layout/Logo.vue'
 import TouchKeyboard from './layout/TouchKeyboard.vue'
+import Filebrowser from "./layout/Filebrowser.vue"
 
 export default {
   name: 'App',
 
   components: {
+    Filebrowser,
     Panel,
     Controls,
     Power,
@@ -380,6 +348,10 @@ export default {
 
     onToggleClipboard() {
       store.toggleClipboard()
+    },
+
+    onToggleFilebrowser() {
+      store.toggleFilebrowser()
     },
 
     onToggleTouchKeyboard() {

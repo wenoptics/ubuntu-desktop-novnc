@@ -27,6 +27,7 @@ import DragIcon from './components/icons/DragIcon.vue'
 import TouchKeyboardIcon from './components/icons/TouchKeyboardIcon.vue'
 import ChevronIcon from './components/icons/ChevronIcon.vue'
 import CheckIcon from './components/icons/CheckIcon.vue'
+import FilebrowserIcon from './components/icons/FilebrowserIcon.vue'
 import './assets/index.css'
 import './assets/theme.css'
 
@@ -51,4 +52,5 @@ app.component('DragIcon', DragIcon)
 app.component('TouchKeyboardIcon', TouchKeyboardIcon)
 app.component('ChevronIcon', ChevronIcon)
 app.component('CheckIcon', CheckIcon)
+app.component('FilebrowserIcon', FilebrowserIcon)
 app.mount('#app')
