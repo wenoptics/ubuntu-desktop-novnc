@@ -54,7 +54,8 @@ const initialSettings = {
   path: 'websockify',
   repeaterId: '',
   port: isSecure ? 443 : window.location.port,
-  ssl: isSecure
+  ssl: isSecure,
+  fbUrl: "/filesystem/files/root/Desktop/"
 }
 
 const store = reactive({

@@ -7,8 +7,6 @@ This is a fork to [andersevenrud/vuensee](https://andersevenrud.github.io/vuense
 
 ---
 
-## Original Doc
-
 > `/wuː'ɛn'siː/`
 
 A [noVNC](https://github.com/novnc/noVNC) client interface built with Vue 3 and Vite.
@@ -105,37 +103,39 @@ The order of settings is as follows (from lowest to highest priority):
 2. localStorage (user settings)
 3. URL parameters
 
-| Environment variable                | URL parameter    | Type     | Default      | Notes                    |
-| ----------------------------------- | ---------------- | -------- | ------------ | ------------------------ |
-| `VITE_TITLE`                        |                  | String   | `vuensee`    |                          |
-| `VITE_ENABLE_PANEL`                 |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_SETTINGS`              |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_CLIPBOARD`             |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_FULLSCREEN`            |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_POWER`                 |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_KEYS`                  |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_TOUCH_KEYBOARD`        |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_URL_SETTINGS`          |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_LOCALSTORAGE_SETTINGS` |                  | Boolean  | `true`       |                          |
-| `VITE_ENABLE_VIEWPORT_DRAGGING`     |                  | Boolean  | `true`       |                          |
-| `VITE_SETTINGS_LANGUAGE`            | `language`       | String   | Auto         | `en`, `no`, `es`         |
-| `VITE_SETTINGS_AUTOCONNECT`         | `autoconnect`    | Boolean  | `false`      |                          |
-| `VITE_SETTINGS_BELL`                | `bell`           | Boolean  | `true`       |                          |
-| `VITE_SETTINGS_SHARED_MODE`         | `sharedMode`     | Boolean  | `true`       |                          |
-| `VITE_SETTINGS_VIEW_ONLY`           | `viewOnly`       | Boolean  | `false`      |                          |
-| `VITE_SETTINGS_CLIP_TO_WINDOW`      | `clipToWindow`   | Boolean  | `false`      |                          |
-| `VITE_SETTINGS_SCALING_MODE`        | `scalingMode`    | String   | `off`        | `off`, `scale`, `remote` |
-| `VITE_SETTINGS_QUALITY`             | `quality`        | Number   | `6`          | `0` - `9`                |
-| `VITE_SETTINGS_COMPRESSION`         | `compression`    | Number   | `2`          | `0` - `9`                |
-| `VITE_SETTINGS_RECONNECT`           | `reconnect`      | Boolean  | `false`      |                          |
-| `VITE_SETTINGS_RECONNECT_DELAY`     | `reconnectDelay` | Number   | `5000`       |                          |
-| `VITE_SETTINGS_MESSAGE_TIMEOUT`     | `messageTimeout` | Number   | `4000`       |                          |
-| `VITE_SETTINGS_DOT_CURSOR`          | `dotCursor`      | Boolean  | `false`      |                          |
-| `VITE_SETTINGS_HOSTNAME`            | `hostname`       | String   | Auto         |                          |
-| `VITE_SETTINGS_PATH`                | `path`           | String   | `websockify` |                          |
-| `VITE_SETTINGS_REPEATER_ID`         | `repeaterId`     | String   |              |                          |
-| `VITE_SETTINGS_PORT`                | `port`           | Number   | Auto         |                          |
-| `VITE_SETTINGS_SSL`                 | `ssl`            | Boolean  | Auto         |                          |
+| Environment variable                | URL parameter    | Type    | Default                            | Notes                      |
+|-------------------------------------|------------------|---------|------------------------------------|----------------------------|
+| `VITE_TITLE`                        |                  | String  | `vuensee`                          |                            |
+| `VITE_ENABLE_PANEL`                 |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_SETTINGS`              |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_CLIPBOARD`             |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_FULLSCREEN`            |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_POWER`                 |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_KEYS`                  |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_TOUCH_KEYBOARD`        |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_URL_SETTINGS`          |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_LOCALSTORAGE_SETTINGS` |                  | Boolean | `true`                             |                            |
+| `VITE_ENABLE_VIEWPORT_DRAGGING`     |                  | Boolean | `true`                             |                            |
+| `VITE_SETTINGS_LANGUAGE`            | `language`       | String  | Auto                               | `en`, `no`, `es`           |
+| `VITE_SETTINGS_AUTOCONNECT`         | `autoconnect`    | Boolean | `false`                            |                            |
+| `VITE_SETTINGS_BELL`                | `bell`           | Boolean | `true`                             |                            |
+| `VITE_SETTINGS_SHARED_MODE`         | `sharedMode`     | Boolean | `true`                             |                            |
+| `VITE_SETTINGS_VIEW_ONLY`           | `viewOnly`       | Boolean | `false`                            |                            |
+| `VITE_SETTINGS_CLIP_TO_WINDOW`      | `clipToWindow`   | Boolean | `false`                            |                            |
+| `VITE_SETTINGS_SCALING_MODE`        | `scalingMode`    | String  | `off`                              | `off`, `scale`, `remote`   |
+| `VITE_SETTINGS_QUALITY`             | `quality`        | Number  | `6`                                | `0` - `9`                  |
+| `VITE_SETTINGS_COMPRESSION`         | `compression`    | Number  | `2`                                | `0` - `9`                  |
+| `VITE_SETTINGS_RECONNECT`           | `reconnect`      | Boolean | `false`                            |                            |
+| `VITE_SETTINGS_RECONNECT_DELAY`     | `reconnectDelay` | Number  | `5000`                             |                            |
+| `VITE_SETTINGS_MESSAGE_TIMEOUT`     | `messageTimeout` | Number  | `4000`                             |                            |
+| `VITE_SETTINGS_DOT_CURSOR`          | `dotCursor`      | Boolean | `false`                            |                            |
+| `VITE_SETTINGS_HOSTNAME`            | `hostname`       | String  | Auto                               |                            |
+| `VITE_SETTINGS_PATH`                | `path`           | String  | `websockify`                       |                            |
+| `VITE_SETTINGS_REPEATER_ID`         | `repeaterId`     | String  |                                    |                            |
+| `VITE_SETTINGS_PORT`                | `port`           | Number  | Auto                               |                            |
+| `VITE_SETTINGS_SSL`                 | `ssl`            | Boolean | Auto                               |                            |
+| `VITE_ENABLE_FILEBROWSER`           |                  | Boolean | `true`                             | Enable filebrowser feature |
+| `VITE_SETTINGS_FB_URL `             |                  | String  | `/filesystem/files/root/Desktop/ ` |                            |
 
 ## License
 

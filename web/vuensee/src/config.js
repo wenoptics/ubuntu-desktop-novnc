@@ -39,7 +39,12 @@ const settingsMap = [
   ['path', parseString],
   ['repeaterId', parseString],
   ['port', parseNumber],
-  ['ssl', parseBoolean]
+  ['ssl', parseBoolean],
+
+  // filebrowser setting - url
+  //    e.g. /filesystem/files/root/Desktop/
+  //    e.g. http://localhost:8080/files/
+  ['fbUrl', parseString]
 ]
 
 /**
@@ -55,7 +60,10 @@ const featureMap = [
   'fullscreen',
   'power',
   'keys',
-  'panel'
+  'panel',
+
+  // `filebrowser` is a web-based file manager
+  'filebrowser'
 ]
 
 /**

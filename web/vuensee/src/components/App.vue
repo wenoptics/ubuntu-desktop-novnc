@@ -82,10 +82,13 @@
       :class="$style.vnc"
     />
 
-    <div :class="$style.sidebar">
+    <div
+      v-if="config.features.filebrowser"
+      :class="$style.sidebar"
+    >
       <iframe
         style="height: 100%; width: 100%"
-        src="/filesystem/files/root/Desktop/"
+        :src="config.settings.fbUrl"
       />
     </div>
 
