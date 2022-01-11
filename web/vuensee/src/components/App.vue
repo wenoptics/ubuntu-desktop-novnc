@@ -74,7 +74,7 @@
         <Filebrowser
           v-if="config.features.filebrowser"
           v-show="showFilebrowser"
-          :url="config.settings.fbUrl"
+          :url="settings.fbUrl"
         />
       </template>
     </Panel>
