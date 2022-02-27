@@ -20,11 +20,20 @@ if [ -n "$RESOLUTION" ]; then
     sed -i "s/1024x768/$RESOLUTION/" /usr/local/bin/xvfb.sh
 fi
 
+
 USER=${USER:-root}
 HOME=/root
 if [ "$USER" != "root" ]; then
-    echo "* enable custom user: $USER"
-    useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $USER
+    echo "* Enable custom user: $USER"
+
+    # Allow UID and GID override. This help solve bind-mount permission issues
+    #   REF: https://techflare.blog/permission-problems-in-bind-mount-in-docker-volume/
+    USER_ID=${LOCAL_UID:-9001}
+    GROUP_ID=${LOCAL_GID:-9001}
+    echo "Creating user with UID: $USER_ID, GID: $GROUP_ID"
+    useradd -u $USER_ID --non-unique --create-home --shell /bin/bash --groups adm,sudo $USER
+    groupmod -g $GROUP_ID $USER
+
     if [ -z "$PASSWORD" ]; then
         echo "  set default password to \"ubuntu\""
         PASSWORD=ubuntu
