@@ -6,11 +6,28 @@
 `ubuntu-desktop-novnc` is a Docker image to provide web VNC interface to access Ubuntu LXDE desktop environment, alone
  side with a browser-based file management UI for quickly access the file system.
 
+## Use case examples
+
+- When you want to quickly spawn an emperial Linux desktop, to test some software. Just throw away the entire environment when the work is finished
+- When you want to create a containerized Ubuntu desktop environment to reproduce certain GUI workflows
+
+## Quick Start
+
+Run the docker container and access with port `6080`
+
+```shell
+docker run -p 6080:80 wenoptics/ubuntu-desktop-novnc
+```
+
+Navigate to http://127.0.0.1:6080/, you have a Ubuntu OS on your browser. You may also transfer files to the containerized system, by drag-n-drop them through the Web browser.
+
+<img src="screenshots/2022-01-09_11-19-22.gif" width=700/>
+
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=2 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-- [Quick Start](#quick-start)
 - [VNC Viewer](#vnc-viewer)
 - [HTTP Base Authentication](#http-base-authentication)
 - [SSL](#ssl)
@@ -22,19 +39,6 @@
 - [License](#license)
 
 <!-- /code_chunk_output -->
-
-## Quick Start
-
-Run the docker container and access with port `6080`
-
-```shell
-docker run -p 6080:80 -v /dev/shm:/dev/shm wenoptics/ubuntu-desktop-novnc
-```
-
-Browse http://127.0.0.1:6080/
-
-<img src="screenshots/2022-01-09_11-19-22.gif" width=700/>
-
 
 ## VNC Viewer
 
